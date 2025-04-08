@@ -153,5 +153,6 @@ Delete a book by its ID.
 - Can further add book reviews 
 - Support for book images or PDs
 - Rate-limiting
-```
+
+---
 
