@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
     if (!token) return res.status(401).json({ error: 'Not authorized' });
 
     try {
-        const decodedJwt = jwt.verify(token, process.env.JWT_SECRET);
+        const decodedJwt = jwt.verify(token, process.env.PRIVATE_KEY);
         req.user = await User.findById(decodedJwt.id).select('-password');
         next();
     } catch {
